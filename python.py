@@ -115,3 +115,48 @@
 #         print(f"Wrong guess! You have {attempts} attempts left.")
 #         if attempts == 0:
 #             print(f"Sorry, the correct number was {RandomNumber}.")
+
+instrcutions = """1.Addition
+2.Substraction
+3.Multiplication
+4.Division
+5.Continue
+6.Exit"""
+
+def addition(a,b):
+    print("Addition of two numbers is:")
+    return a+b
+
+def substraction(a,b):
+    print("Difference of two numbers is:")
+    return a-b
+
+def multiplication(a,b):
+    print("Multiplication of two numbers is:")
+    return a*b
+
+def division(a,b):
+    print("Division of two numbers is:")
+    return a/b
+
+tocontinue = True
+while tocontinue == True:
+    print(instrcutions)
+    inst=int(input("Enter your choice: "))
+    a=int(input("Enter first number."))
+    b=int(input("Enter second number."))
+    
+    if inst == 1:
+        print(addition(a,b))
+    elif inst == 2:
+        print(substraction(a,b))
+    elif inst == 3:
+        print(multiplication(a,b))
+    elif inst == 4:
+        print(division(a,b))
+    elif inst == 5:
+        tocontinue = True
+    elif inst == 6:
+        tocontinue = False
+    else:
+        print("Invalid Choice.")
