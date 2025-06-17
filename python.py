@@ -38,12 +38,14 @@
 # name = input("What is ur name?")
 # print("Name:-", name)
 
-# x1 = input("My marks:-")
-# x2 = input("Teammate marks:-")
-# if(x1 > x2):
-#     print("Anand have greater marks than his teammate")
-# elif(x1 < x2):
-#     print("Teammate has greater marks than Anand")
+# m1 = input("Enter your marks: ")
+# m2 = input("Enter teammate marks: ")
+# if(m1<m2):
+#     print("You have more marks than your teammate.")
+# elif(m1>m2):
+#     print("You have less marks than your teammate.")
+
+
 
 # ================
 # List Operations
@@ -52,6 +54,7 @@
 # rn.append(70)
 # rn.remove(10)
 # del rn[1]
+# rn.pop(0)
 # print(rn)
 # rn.sort()
 # print(rn)
@@ -116,47 +119,99 @@
 #         if attempts == 0:
 #             print(f"Sorry, the correct number was {RandomNumber}.")
 
-instrcutions = """1.Addition
-2.Substraction
-3.Multiplication
-4.Division
-5.Continue
-6.Exit"""
+# instrcutions = """1.Addition
+# 2.Substraction
+# 3.Multiplication
+# 4.Division
+# 5.Continue
+# 6.Exit"""
 
-def addition(a,b):
-    print("Addition of two numbers is:")
-    return a+b
+# def addition(a,b):
+#     print("Addition of two numbers is:")
+#     return a+b
 
-def substraction(a,b):
-    print("Difference of two numbers is:")
-    return a-b
+# def substraction(a,b):
+#     print("Difference of two numbers is:")
+#     return a-b
 
-def multiplication(a,b):
-    print("Multiplication of two numbers is:")
-    return a*b
+# def multiplication(a,b):
+#     print("Multiplication of two numbers is:")
+#     return a*b
 
-def division(a,b):
-    print("Division of two numbers is:")
-    return a/b
+# def division(a,b):
+#     print("Division of two numbers is:")
+#     return a/b
 
+# tocontinue = True
+# while tocontinue == True:
+#     print(instrcutions)
+#     inst=int(input("Enter your choice: "))
+#     a=int(input("Enter first number."))
+#     b=int(input("Enter second number."))
+    
+#     if inst == 1:
+#         print(addition(a,b))
+#     elif inst == 2:
+#         print(substraction(a,b))
+#     elif inst == 3:
+#         print(multiplication(a,b))
+#     elif inst == 4:
+#         print(division(a,b))
+#     elif inst == 5:
+#         tocontinue = True
+#     elif inst == 6:
+#         tocontinue = False
+#     else:
+#         print("Invalid Choice.")
+  
+# Banking--------------
+
+balance = 30000
+passbook = []
+def deposit():
+    global balance
+    deposit_amount = int(input("Enter the amount that you want to deposit: "))
+    balance += deposit_amount
+    print(f"The balance of your account is {balance} after depositing.")
+    passbook.append(f"{deposit_amount} was deposited in the account.")
+
+def withdraw():
+    global balance
+    withdraw_amount = int(input("Enter the amount that you want to withdraw: "))
+    if balance > withdraw_amount:
+        balance -= withdraw_amount
+        print(f"The balance of your account is {balance} after withdrawing.")
+        passbook.append(f"{withdraw_amount} was withdrawn from the account.")
+    else:
+        print("Insufficient Balance.")
+
+def check_balance():
+    global balance
+    print(f"Your balance in the account is: {balance}.")
+
+def check_passbook():
+    global balance
+    print("Passbook logs are: ")
+    print(passbook)
+
+options = """1.Deposit Amount
+2.Withdraw Amount
+3.Check Balance
+4.check Passbook
+5.Exit"""
 tocontinue = True
 while tocontinue == True:
-    print(instrcutions)
-    inst=int(input("Enter your choice: "))
-    a=int(input("Enter first number."))
-    b=int(input("Enter second number."))
-    
-    if inst == 1:
-        print(addition(a,b))
-    elif inst == 2:
-        print(substraction(a,b))
-    elif inst == 3:
-        print(multiplication(a,b))
-    elif inst == 4:
-        print(division(a,b))
-    elif inst == 5:
-        tocontinue = True
-    elif inst == 6:
+    print(options)
+    choice = int(input("Enter your choice from the above options: "))
+    if choice == 1:
+        print(deposit())
+    elif choice == 2:
+        print(withdraw())
+    elif choice == 3:
+        print(check_balance())
+    elif choice == 4:
+        print(check_passbook())
+    elif choice == 5:
         tocontinue = False
     else:
-        print("Invalid Choice.")
+        print("Invalid Choice!")
